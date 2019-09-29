@@ -6,8 +6,6 @@ Not all things are seen as equal until you stare at it long enough!
 
 With malware causing havoc across the globe, this unreleased project attempts to block malicious file downloads with no need for file reputation and it currently does this very well with #Emotet.  
 
-Want a live demonstration? Need help setting this up in your environment? See my contact below.  
-
 #### Demonstration blocking Emotet:  
 - Connect to URLhaus  
 - Open three (3) database entries for recent and active Emotet URLs  
