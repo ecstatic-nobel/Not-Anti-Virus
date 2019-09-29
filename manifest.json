@@ -1,0 +1,19 @@
+{
+  "name": "Not Anti-virus",
+  "author": "ecstatic-nobel",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "An attmept to block malware before AV scans it.",
+  "homepage_url": "https://github.com/ecstatic-nobel/Not-Anti-Virus",
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "*://*/*"
+  ]
+}
