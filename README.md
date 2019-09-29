@@ -4,7 +4,7 @@
 #### Description  
 Not all things are seen as equal until you stare at it long enough!  
 
-With malware causing havoc across the globe, this project attempts to block malicious downloads before host-level anti-virus gets a hold of it. It currently happens to do this very well with Emotet.  
+With malware causing havoc across the globe, this unreleased project attempts to block malicious file downloads before AV scans it. You can see in the video that it currently happens to do this very well with #Emotet.  
 
 Want a live demonstration? Need help setting this up in your environment? See my contact below.  
 
