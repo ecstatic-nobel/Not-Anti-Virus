@@ -4,7 +4,7 @@
 #### Description  
 Not all things are seen as equal until you stare at it long enough!  
 
-With malware causing havoc across the globe, this unreleased project attempts to block malicious file downloads with no need for file reputation and it currently does this very well with #Emotet.  
+With malware causing havoc across the globe, this browser extension is a PoC for blocking Emotet downloads using just the response headers. The research can be found in this thread: https://twitter.com/ecstatic_nobel/status/1176267975537713152?s=19.   
 
 #### Demonstration blocking Emotet:  
 - Connect to URLhaus  
