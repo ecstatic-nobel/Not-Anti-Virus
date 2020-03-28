@@ -1,7 +1,7 @@
 {
   "name": "Not Anti-Virus",
   "author": "ecstatic-nobel",
-  "version": "0.2",
+  "version": "0.3",
   "manifest_version": 2,
   "description": "An attmept to block malware before AV scans it.",
   "homepage_url": "https://github.com/ecstatic-nobel/Not-Anti-Virus",
