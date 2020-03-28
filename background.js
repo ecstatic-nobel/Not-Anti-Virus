@@ -1,11 +1,20 @@
 var match = false
 
-var content_disposition = /attachment;(\s+)?filename=\"\w+_encrypted_([0-9]|[a-f]|[0-9a-f])+\.bin\".*/gi
-var set_cookie = /(^|\n)5[a-z][a-f0-9].*/gi
-var uri = /\w+_encrypted_([0-9]|[a-f]|[0-9a-f])+\.bin.*/gi
+// Content-Disposition
+var cd_guloader = /attachment;(\s+)?filename=\"\w+_encrypted_([0-9]|[a-f]|[0-9a-f])+\.bin\".*/gi;
+
+// Set-Cookie
+var sc_emotet = /(^|\n)5[a-z][a-f0-9].*/gi;
+
+// URI
+var uri_guloader = /\w+_encrypted_([0-9]|[a-f]|[0-9a-f])+\.bin$/gi;
+var uri_mozi = /\/Mozi\.m$/gi;
 
 function blockRequest(r) {
-  if (r.url.match(uri)) {
+  if (
+    r.url.match(uri_guloader) ||
+    r.url.match(uri_mozi)
+  ) {
     return {
       redirectUrl: "http://127.0.0.1/"
     }
@@ -20,10 +29,10 @@ function blockResponse(rr) {
       for (var i = 0, l = resp_headers.length; i < l; ++i) {
         if (
           (resp_headers[i].name.toLowerCase() == "set-cookie" &&
-          resp_headers[i].value.match(set_cookie))
+          resp_headers[i].value.match(sc_emotet))
           ||
           (resp_headers[i].name.toLowerCase() == "content-disposition" &&
-          resp_headers[i].value.match(content_disposition))
+          resp_headers[i].value.match(cd_guloader))
         ) {
           return {
             redirectUrl: "http://127.0.0.1/"
@@ -34,7 +43,7 @@ function blockResponse(rr) {
   }
 };
 
-var api = "webRequest"
+var api = "webRequest";
 var _this = this;
 
 try {
@@ -45,7 +54,7 @@ try {
     _this[api] = browser[api];
     params = ['blocking', 'responseHeaders']
   }
-} catch (e) {}
+} catch (e) {};
 
 try {
   _this[api].onBeforeRequest.addListener(
@@ -54,7 +63,7 @@ try {
     },
     ['blocking']
   );
-} catch (e) {}
+} catch (e) {};
 
 try {
   _this[api].onHeadersReceived.addListener(
@@ -63,4 +72,4 @@ try {
     },
     params
   );
-} catch (e) {}
+} catch (e) {};
